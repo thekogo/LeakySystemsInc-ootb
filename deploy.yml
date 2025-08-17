@@ -1,0 +1,20 @@
+name: Gaze Through the Dragons Eyes Eye
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  retrieve:
+    name: Echoes in the Cloud
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Invoke the Sigil (Configure AWS Credentials)
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/AWSServicesRoleForGithub-q6q54m2r
+          aws-region: us-west-2
