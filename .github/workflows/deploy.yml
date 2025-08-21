@@ -22,7 +22,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          ref: LeakySyst3ms/ref/heads/main
+          repository: cloud-village/LeakySyst3ms
+          ref: main
           fetch-depth: 0  # Optional: fetches full history
 
       - name: List Files in Repository
