@@ -18,3 +18,17 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/AWSServicesRoleForGithub-q6q54m2r
           aws-region: us-west-2
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: LeakySyst3ms/ref/heads/main
+          fetch-depth: 0  # Optional: fetches full history
+
+      - name: List Files in Repository
+        run: |
+          echo "📂 Current directory contents:"
+          ls -la
+          echo ""
+          echo "🌳 Directory tree structure:"
+          find . -type f -name ".*" -prune -o -type f -print | head -20
